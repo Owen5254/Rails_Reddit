@@ -3,20 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 gem "rails", "~> 7.0.4"
-
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem "tzinfo-data"
-
-# Reduces boot times through caching; required in config/boot.rb
+gem "devise"
 gem "bootsnap", require: false
 
 group :development, :test do
