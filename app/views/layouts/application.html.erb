@@ -11,11 +11,26 @@
 
   <body>
 
+    <%# used to add flash msg %>
     <% flash.each do |type, msg| %>
       <div>
         <%= msg %>
       </div>
     <% end %>
+
+    <% if user_signed_in? %>
+      <ul>
+        <li><%= link_to 'Sumit link', new_link_path %></li>
+        <li><%= link_to 'Account', edit_user_registration_path %></li>
+        <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+      </ul>  
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
