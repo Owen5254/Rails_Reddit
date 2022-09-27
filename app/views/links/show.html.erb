@@ -1,8 +1,14 @@
-<%= render @link %>
+<div class= "page-header">
+  <h1><a herf="<%= @link.url %>"> <%= @link.title%><br>
+    <small>Submitted by<%= @link.user.email %></small>
+  </h1>
+</div>
 
-<div>
-  <%= link_to "Edit this link", edit_link_path(@link) %> |
-  <%= link_to "Back to links", links_path %>
+<div class= "btn-toolbar">
+  <%= button_to 'Visit URL', @link.url, class:"btn btn-primary" %>
 
-  <%= button_to "Destroy this link", @link, method: :delete %>
+<% if @link.user == current_user %>
+    <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
+    <%= button_to 'Destroy', @link, method: :delete, data:{confirm: 'Are you sure?'}, class: "btn btn-default" %>
+<% end %>
 </div>
