@@ -4,11 +4,28 @@
   </h1>
 </div>
 
-<div class= "btn-toolbar">
+<div class= "btn-toolbar col-md-9">
   <%= button_to 'Visit URL', @link.url, class:"btn btn-primary" %>
 
 <% if @link.user == current_user %>
     <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
     <%= button_to 'Destroy', @link, method: :delete, data:{confirm: 'Are you sure?'}, class: "btn btn-default" %>
+
 <% end %>
 </div>
+
+<div class= "btn-toolbar">
+  <%= button_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-chevron-up"></span>
+    Upvote
+    <%= @link.get_likes.size %>
+  <% end %>
+  <%= button_to dislike_link_path(@link), method: :put, class: 'btn btn-default btn-sm' do %>
+    <span class= 'glyphicon glyphicon-chevron-down'></span>
+    Downvote
+    <%= @link.get_downvotes.size %>
+  <% end %>
+</div>
+
+
+

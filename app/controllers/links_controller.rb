@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: %i[ show edit update destroy ]
+  before_action :set_link, only: %i[ show edit update destroy upvote downvote]
+
   # 這個是 devise 提供的方法, 先檢查必須登入
   before_action :authenticate_user!, except: [:index, :show]
   
@@ -57,6 +58,16 @@ class LinksController < ApplicationController
       format.html { redirect_to links_url, notice: "Link was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @link.upvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def downvote
+    @link.downvote_by current_user
+    redirect_back fallback_location: root_path
   end
 
   private

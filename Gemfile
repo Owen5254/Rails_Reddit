@@ -14,6 +14,7 @@ gem "tzinfo-data"
 gem "bootsnap", require: false
 gem "devise"
 gem "bootstrap-sass"  
+gem "acts_as_votable"
 
 
 
