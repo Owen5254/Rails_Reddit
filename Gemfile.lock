@@ -79,6 +79,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     builder (3.2.4)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -198,6 +199,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rolify (6.0.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -258,6 +260,7 @@ DEPENDENCIES
   acts_as_votable
   bootsnap
   bootstrap-sass
+  cancancan
   capybara
   debug
   devise
@@ -268,6 +271,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rails-ujs (~> 0.1.0)
   record_tag_helper
+  rolify
   selenium-webdriver
   simple_form
   sprockets-rails

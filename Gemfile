@@ -19,6 +19,8 @@ gem "simple_form"
 gem "record_tag_helper"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
+gem 'cancancan'
+gem 'rolify'
 
 
 
